@@ -46,4 +46,3 @@ obj
 # Terraform
 .terraform
 .terraform*
-terraform*

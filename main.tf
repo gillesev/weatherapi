@@ -5,6 +5,13 @@ terraform {
       version = "~> 2.57.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name = "tf-storage"
+    storage_account_name = "getfstorage"
+    container_name = "tfstate"
+    key = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
@@ -35,6 +42,5 @@ resource "azurerm_container_group" "tf-container-group" {
       port = 80
       protocol = "TCP"
     }
-    
   }
 }
